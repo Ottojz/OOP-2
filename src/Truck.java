@@ -11,3 +11,4 @@ public class Truck extends Transport {
         System.out.println("Проверяем прицеп");
     }
 }
+
