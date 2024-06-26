@@ -1,3 +1,5 @@
+package transport;
+
 public class Bicycle extends Transport {
 
     public Bicycle(String modelName, int wheelsCount) {
@@ -5,8 +7,7 @@ public class Bicycle extends Transport {
     }
 
     @Override
-    public void performMaintenance() {
-        super.performMaintenance();
+    public void check() {
+        super.check();
     }
 }
-

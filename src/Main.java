@@ -1,20 +1,24 @@
+import service.Servicable;
+import service.ServiceStation;
+import transport.Bicycle;
+import transport.Car;
+import transport.Transport;
+import transport.Truck;
+
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("car1", 4);
-        Car car2 = new Car("car2", 4);
+        ServiceStation serviceStation = new ServiceStation();
 
-        Truck truck = new Truck("truck1", 6);
-        Truck truck2 = new Truck("truck2", 8);
+        Servicable[] transport = new Transport [6];
+        transport[0] = new Car("car1", 4);
+        transport[1]= new Car("car2", 4);
+        transport[2]= new Truck("truck1", 6);
+        transport[3] = new Truck("truck2", 8);
+        transport[4] = new Bicycle("bicycle1", 2);
+        transport[5] = new Bicycle("bicycle2", 2);
 
-        Bicycle bicycle = new Bicycle("bicycle1", 2);
-        Bicycle bicycle2 = new Bicycle("bicycle2", 2);
-
-        car.performMaintenance();
-        car2.performMaintenance();
-        bicycle.performMaintenance();
-        bicycle2.performMaintenance();
-        truck.performMaintenance();
-        truck2.performMaintenance();
+        for (Servicable servicable : transport) {
+            serviceStation.check(servicable);
+        }
     }
 }
-
